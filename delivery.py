@@ -7,8 +7,8 @@ class DeliveryService(ABC):
     
 class NovaPostaDelivery(DeliveryService):
     def deliver(self, order):
-        return f'Заказ:{order},Доставка Новою Поштою оформлена'
+        return f'Заказ:{order.user.get_name()},Доставка Новою Поштою оформлена'
     
 class CourierDelivery(DeliveryService):
     def deliver(self, order):
-        return f"Заказ:{order}, Кур’єрська доставка оформлена"
+        return f"Заказ:{order.user.get_name()}, Кур’єрська доставка оформлена"
